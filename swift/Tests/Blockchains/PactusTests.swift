@@ -78,15 +78,16 @@ class PactusTests: XCTestCase {
         let expectedTransactionID = "d194b445642a04ec78ced4448696e50b733f2f0b517a23871882c0eefaf1c28f"
         let expectedSignature = "0d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b4338328adac7" +
                                 "9d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39ce7006300"
-        let expectedSignedData = "0001c1b0230080ade2040b77616c6c65742d636f726502037098338e0b68081"
-                                 "19dfd4457ab806b9c2059b89b0129288df0bf7bd4b5e9eeed8b932d0c76f451"+
-                                 "823d6098bd4dc20b03460a651c661dd9f10f17797049cac62a9fef228832bbc"+
-                                 "c3a39355cdf15b68bddf432f1ab3eab8debe1300aa43724834650866a9d5528"+
-                                 "27a56bbcdde32e3c517079589b54e83d16f9435abb3b2de8c3e677067cc0644"+
-                                 "ccb13833b8094ebdc030d7bc6d94927534b89e2f53bcfc9fc849e0e29824389"+
-                                 "55eda55b4338328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d"+
-                                 "71f9eff65e39ce700630095794161374b22c696dabb98e93f6ca9300b22f3b9"+
-                                 "04921fbf560bb72145f4fa"
+        let expectedSignedData = "0001c1b00101c1b0230080ade2040b77616c6c65742d636f726502037098338e" +
+                                 "0b6808119dfd4457ab806b9c2059b89b0129288df0bf7bd4b5e9eeed8b932d0c" +
+                                 "76f451823d6098bd4dc20b03460a651c661dd9f10f17797049cac62a9fef2288" +
+                                 "32bbcc3a39355cdf15b68bddf432f1ab3eab8debe1300aa43724834650866a9d" +
+                                 "552827a56bbcdde32e3c517079589b54e83d16f9435abb3b2de8c3e677067cc0" +
+                                 "644ccb13833b8094ebdc030d7bc6d94927534b89e2f53bcfc9fc849e0e298243" +
+                                 "8955eda55b4338328adac79d4ee3216d143f0e1629764ab650734f8ba188e716" +
+                                 "d71f9eff65e39ce7006300230080ade2040b77616c6c65742d636f7265020370" +
+                                 "98338e0b68081"
+
         XCTAssertEqual(output.transactionID.hexString, expectedTransactionID)
         XCTAssertEqual(output.signature.hexString, expectedSignature)
         XCTAssertEqual(output.signedTransactionData.hexString, expectedSignedData)

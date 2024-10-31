@@ -54,18 +54,12 @@ class TestPactusSigner {
         )
 
         assertEquals(
-            "0x8dea6d79ee7ec60f66433f189ed9b3c50b2ad6fa004e26790ee736693eda8506" ,
-            "95794161374b22c696dabb98e93f6ca9300b22f3b904921fbf560bb72145f4fa",
+            "0x8dea6d79ee7ec60f66433f189ed9b3c50b2ad6fa004e26790ee736693eda850695794161374b22c696dabb98e93f6ca9300b22f3b904921fbf560bb72145f4fa",
             Numeric.toHexString(output.signature.toByteArray())
         )
 
         assertEquals(
-            "0x000124a3230080ade2040b77616c6c65742d636f726501037098338e0b680811" ,
-            "9dfd4457ab806b9c2059b89b037a14ae24533816e7faaa6ed28fcdde8e55a7df2" ,
-            "18084af5f4ed8fee3d8992e82660dd05bbe8608fc56ceabffdeeee61e3213b9b4" ,
-            "9d33a0fc8dea6d79ee7ec60f66433f189ed9b3c50b2ad6fa004e26790ee736693" ,
-            "eda850695794161374b22c696dabb98e93f6ca9300b22f3b904921fbf560bb721" ,
-            "45f4fa",
+            "0x000124a3230080ade2040b77616c6c65742d636f726501037098338e0b6808119dfd4457ab806b9c2059b89b037a14ae24533816e7faaa6ed28fcdde8e55a7df218084af5f4ed8fee3d8992e82660dd05bbe8608fc56ceabffdeeee61e3213b9b49d33a0fc8dea6d79ee7ec60f66433f189ed9b3c50b2ad6fa004e26790ee736693eda850695794161374b22c696dabb98e93f6ca9300b22f3b904921fbf560bb72145f4fa",
             Numeric.toHexString(output.signedTransactionData.toByteArray())
         )
     }
@@ -102,20 +96,12 @@ class TestPactusSigner {
         )
 
         assertEquals(
-            "0x0d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b4338328adac7" ,
-            "9d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39ce7006300",
+            "0x0d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b4338328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39ce7006300",
             Numeric.toHexString(output.signature.toByteArray())
         )
 
         assertEquals(
-            "0x0101c1b0230080ade2040b77616c6c65742d636f726502037098338e0b68081" ,
-            "19dfd4457ab806b9c2059b89b0129288df0bf7bd4b5e9eeed8b932d0c76f45182" ,
-            "3d6098bd4dc20b03460a651c661dd9f10f17797049cac62a9fef228832bbcc3a3" ,
-            "9355cdf15b68bddf432f1ab3eab8debe1300aa43724834650866a9d552827a56b" ,
-            "bcdde32e3c517079589b54e83d16f9435abb3b2de8c3e677067cc0644ccb13833" ,
-            "b8094ebdc030d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b43" ,
-            "38328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39" ,
-            "ce7006300",
+            "0x0101c1b0230080ade2040b77616c6c65742d636f726502037098338e0b6808119dfd4457ab806b9c2059b89b0129288df0bf7bd4b5e9eeed8b932d0c76f451823d6098bd4dc20b03460a651c661dd9f10f17797049cac62a9fef228832bbcc3a39355cdf15b68bddf432f1ab3eab8debe1300aa43724834650866a9d552827a56bbcdde32e3c517079589b54e83d16f9435abb3b2de8c3e677067cc0644ccb13833b8094ebdc030d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b4338328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39ce7006300",
             Numeric.toHexString(output.signedTransactionData.toByteArray())
         )
     }
@@ -151,18 +137,12 @@ class TestPactusSigner {
         )
 
         assertEquals(
-            "0x9e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7d85c087a8748ff0" ,
-            "715b9149afbd94c5d8ee6b37c787ec63e963cbb38be513ebc436aa58f9a8f00d",
+            "0x9e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7d85c087a8748ff0715b9149afbd94c5d8ee6b37c787ec63e963cbb38be513ebc436aa58f9a8f00d",
             Numeric.toHexString(output.signature.toByteArray())
         )
 
         assertEquals(
-            "0x01015ca3230080ade2040b77616c6c65742d636f726502037098338e0b68081" ,
-            "19dfd4457ab806b9c2059b89b01d2fa2a7d560502199995ea260954f064d90278" ,
-            "be008094ebdc039e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7d8" ,
-            "5c087a8748ff0715b9149afbd94c5d8ee6b37c787ec63e963cbb38be513ebc436" ,
-            "aa58f9a8f00d",
-
+            "0x01015ca3230080ade2040b77616c6c65742d636f726502037098338e0b6808119dfd4457ab806b9c2059b89b01d2fa2a7d560502199995ea260954f064d90278be008094ebdc039e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7d85c087a8748ff0715b9149afbd94c5d8ee6b37c787ec63e963cbb38be513ebc436aa58f9a8f00d",
             Numeric.toHexString(output.signedTransactionData.toByteArray())
         )
     }

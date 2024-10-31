@@ -3,9 +3,7 @@
 // Copyright © 2017 Trust Wallet.
 
 use crate::chains::pactus::test_cases::PRIVATE_KEY;
-use crate::chains::pactus::test_cases::{
-    bond_with_public_key_test_case, bond_without_public_key_test_case, transfer_test_case,
-};
+use crate::chains::pactus::test_cases::TEST_CASES;
 use tw_any_coin::ffi::tw_transaction_compiler::{
     tw_transaction_compiler_compile, tw_transaction_compiler_pre_image_hashes,
 };
@@ -21,41 +19,9 @@ use tw_proto::Pactus::Proto;
 use tw_proto::TxCompiler::Proto as CompilerProto;
 use tw_proto::{deserialize, serialize};
 
-struct TestCase {
-    sign_input_fn: fn() -> Proto::SigningInput<'static>,
-    expected_sign_bytes: &'static str,
-    expected_signature: &'static str,
-    expected_tx_id: &'static str,
-    expected_signed_data: &'static str,
-}
-
 #[test]
 fn test_pactus_transaction_compile() {
-    let cases = [
-        TestCase {
-            sign_input_fn: transfer_test_case::sign_input,
-            expected_sign_bytes: transfer_test_case::SIGN_BYTES,
-            expected_signature: transfer_test_case::SIGNATURE,
-            expected_tx_id: transfer_test_case::TX_ID,
-            expected_signed_data: transfer_test_case::SIGNED_DATA,
-        },
-        TestCase {
-            sign_input_fn: bond_with_public_key_test_case::sign_input,
-            expected_sign_bytes: bond_with_public_key_test_case::SIGN_BYTES,
-            expected_signature: bond_with_public_key_test_case::SIGNATURE,
-            expected_tx_id: bond_with_public_key_test_case::TX_ID,
-            expected_signed_data: bond_with_public_key_test_case::SIGNED_DATA,
-        },
-        TestCase {
-            sign_input_fn: bond_without_public_key_test_case::sign_input,
-            expected_sign_bytes: bond_without_public_key_test_case::SIGN_BYTES,
-            expected_signature: bond_without_public_key_test_case::SIGNATURE,
-            expected_tx_id: bond_without_public_key_test_case::TX_ID,
-            expected_signed_data: bond_without_public_key_test_case::SIGNED_DATA,
-        },
-    ];
-
-    for case in cases.iter() {
+    for case in TEST_CASES.iter() {
         // Step 1: Create signing input.
         let input = (case.sign_input_fn)();
 
@@ -72,7 +38,7 @@ fn test_pactus_transaction_compile() {
 
         assert_eq!(preimage.error, SigningErrorType::OK);
         assert!(preimage.error_message.is_empty());
-        assert_eq!(preimage.data.to_hex(), case.expected_sign_bytes);
+        assert_eq!(preimage.data.to_hex(), case.data_to_sign);
 
         // Step 3: Sign the data "externally"
         let private_key = ed25519::sha512::KeyPair::try_from(PRIVATE_KEY).unwrap();
@@ -82,7 +48,7 @@ fn test_pactus_transaction_compile() {
             .sign(preimage.data.to_vec())
             .expect("Error signing data")
             .to_vec();
-        assert_eq!(signature.to_hex(), case.expected_signature);
+        assert_eq!(signature.to_hex(), case.signature);
 
         // Step 4: Compile transaction info
         let signatures = TWDataVectorHelper::create([signature]);
@@ -105,11 +71,8 @@ fn test_pactus_transaction_compile() {
 
         assert_eq!(output.error, SigningErrorType::OK);
         assert!(output.error_message.is_empty());
-        assert_eq!(output.transaction_id.to_hex(), case.expected_tx_id);
-        assert_eq!(output.signature.to_hex(), case.expected_signature);
-        assert_eq!(
-            output.signed_transaction_data.to_hex(),
-            case.expected_signed_data
-        );
+        assert_eq!(output.transaction_id.to_hex(), case.transaction_id);
+        assert_eq!(output.signature.to_hex(), case.signature);
+        assert_eq!(output.signed_transaction_data.to_hex(), case.signed_data);
     }
 }

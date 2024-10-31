@@ -85,11 +85,11 @@ class TestPactusSigner {
                 lockTime = 2339009
                 fee = 10000000
                 memo = "wallet-core"
-                transfer = Pactus.TransferPayload.newBuilder().apply {
+                bond = Pactus.BondPayload.newBuilder().apply {
                     sender = "pc1rwzvr8rstdqypr80ag3t6hqrtnss9nwymcxy3lr"
                     receiver = "pc1p9y5gmu9l002tt60wak9extgvwm69rq3a9ackrl"
                     stake = 1000000000
-                    public_key: "public1pnz75msstqdrq5eguvcwanug0zauhqjw2cc4flmez3qethnp68y64ehc4k69amapj7x4na2uda0snqz4yxujgx3jsse4f64fgy7jkh0xauvhrc5ts09vfk48g85t0js66hvajm6xruemsvlxqv3xvkyur8v9v0mtn"
+                    public_key = "public1pnz75msstqdrq5eguvcwanug0zauhqjw2cc4flmez3qethnp68y64ehc4k69amapj7x4na2uda0snqz4yxujgx3jsse4f64fgy7jkh0xauvhrc5ts09vfk48g85t0js66hvajm6xruemsvlxqv3xvkyur8v9v0mtn"
                 }.build()
             }.build()
         }
@@ -114,7 +114,7 @@ class TestPactusSigner {
             "9355cdf15b68bddf432f1ab3eab8debe1300aa43724834650866a9d552827a56b" +
             "bcdde32e3c517079589b54e83d16f9435abb3b2de8c3e677067cc0644ccb13833" +
             "b8094ebdc030d7bc6d94927534b89e2f53bcfc9fc849e0e2982438955eda55b43" +
-            "38328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39"
+            "38328adac79d4ee3216d143f0e1629764ab650734f8ba188e716d71f9eff65e39" +
             "ce7006300",
             Numeric.toHexString(output.signedTransactionData.toByteArray())
         )
@@ -135,7 +135,7 @@ class TestPactusSigner {
                 lockTime = 2335580
                 fee = 10000000
                 memo = "wallet-core"
-                transfer = Pactus.TransferPayload.newBuilder().apply {
+                bond = Pactus.BondPayload.newBuilder().apply {
                     sender = "pc1rwzvr8rstdqypr80ag3t6hqrtnss9nwymcxy3lr"
                     receiver = "pc1p6taz5l2kq5ppnxv4agnqj48svnvsy797xpe6wd"
                     stake = 1000000000

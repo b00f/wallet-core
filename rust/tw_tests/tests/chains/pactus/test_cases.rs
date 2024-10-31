@@ -82,7 +82,7 @@ pub mod transfer_test_case {
 
 // Successfully broadcasted bond transaction:
 // https://pacviewer.com/transaction/d194b445642a04ec78ced4448696e50b733f2f0b517a23871882c0eefaf1c28f
-pub mod bond_test_case {
+pub mod bond_with_public_key_test_case {
     use super::*;
     use tw_encoding::hex::DecodeHex;
 

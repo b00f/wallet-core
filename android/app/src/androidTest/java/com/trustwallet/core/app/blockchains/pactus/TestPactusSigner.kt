@@ -25,7 +25,7 @@ class TestPactusSigner {
 
     @Test
     fun testPactusTransferSigning() {
-        // Successfully broadcasted transfer transaction:
+        // Successfully broadcasted transaction:
         // https://pacviewer.com/transaction/1b6b7226f7935a15f05371d1a1fefead585a89704ce464b7cc1d453d299d235f
         //
         val signingInput = Pactus.SigningInput.newBuilder()
@@ -71,8 +71,8 @@ class TestPactusSigner {
     }
 
     @Test
-    fun testPactusBondSigning() {
-        // Successfully broadcasted transfer transaction:
+    fun testPactusBondWithPublicKeySigning() {
+        // Successfully broadcasted transaction:
         // https://pacviewer.com/transaction/d194b445642a04ec78ced4448696e50b733f2f0b517a23871882c0eefaf1c28f
         //
         val signingInput = Pactus.SigningInput.newBuilder()
@@ -122,7 +122,7 @@ class TestPactusSigner {
 
     @Test
     fun testPactusBondWithoutPublicKeySigning() {
-        // Successfully broadcasted transfer transaction:
+        // Successfully broadcasted transaction:
         // https://pacviewer.com/transaction/f83f583a5c40adf93a90ea536a7e4b467d30ca4f308d5da52624d80c42adec80
         //
         val signingInput = Pactus.SigningInput.newBuilder()

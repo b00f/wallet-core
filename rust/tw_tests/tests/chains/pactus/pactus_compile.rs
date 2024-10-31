@@ -3,7 +3,9 @@
 // Copyright © 2017 Trust Wallet.
 
 use crate::chains::pactus::test_cases::PRIVATE_KEY;
-use crate::chains::pactus::test_cases::{bond_with_public_key_test_case, bond_without_public_key_test_case, transfer_test_case};
+use crate::chains::pactus::test_cases::{
+    bond_with_public_key_test_case, bond_without_public_key_test_case, transfer_test_case,
+};
 use tw_any_coin::ffi::tw_transaction_compiler::{
     tw_transaction_compiler_compile, tw_transaction_compiler_pre_image_hashes,
 };

@@ -83,7 +83,7 @@ class TestPactusSigner {
                     sender = "pc1rwzvr8rstdqypr80ag3t6hqrtnss9nwymcxy3lr"
                     receiver = "pc1p9y5gmu9l002tt60wak9extgvwm69rq3a9ackrl"
                     stake = 1000000000
-                    public_key = "public1pnz75msstqdrq5eguvcwanug0zauhqjw2cc4flmez3qethnp68y64ehc4k69amapj7x4na2uda0snqz4yxujgx3jsse4f64fgy7jkh0xauvhrc5ts09vfk48g85t0js66hvajm6xruemsvlxqv3xvkyur8v9v0mtn"
+                    publicKey = "public1pnz75msstqdrq5eguvcwanug0zauhqjw2cc4flmez3qethnp68y64ehc4k69amapj7x4na2uda0snqz4yxujgx3jsse4f64fgy7jkh0xauvhrc5ts09vfk48g85t0js66hvajm6xruemsvlxqv3xvkyur8v9v0mtn"
                 }.build()
             }.build()
         }

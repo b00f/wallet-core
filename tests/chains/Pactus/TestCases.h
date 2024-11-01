@@ -107,7 +107,7 @@ const std::string signature = "9e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7
                               "715b9149afbd94c5d8ee6b37c787ec63e963cbb38be513ebc436aa58f9a8f00d";
 const std::string dataToSign = "015ca3230080ade2040b77616c6c65742d636f726502037098338e0b6808119d"
                                "fd4457ab806b9c2059b89b01d2fa2a7d560502199995ea260954f064d90278be"
-                               "008094eb";
+                               "008094ebdc03";
 const std::string signedData = "00015ca3230080ade2040b77616c6c65742d636f726502037098338e0b680811"
                                "9dfd4457ab806b9c2059b89b01d2fa2a7d560502199995ea260954f064d90278"
                                "be008094ebdc039e6279fb64067c7d7316ac74630bbb8589df268aa4548f1c7d"
